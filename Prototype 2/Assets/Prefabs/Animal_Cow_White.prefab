@@ -1889,6 +1889,9 @@ GameObject:
   - component: {fileID: 6976645648853807151}
   - component: {fileID: 6378384036743455703}
   - component: {fileID: -9104921692974958783}
+  - component: {fileID: 7840297720026203477}
+  - component: {fileID: 6438570568069327618}
+  - component: {fileID: -7052522695414119104}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Untagged
@@ -1956,7 +1959,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5caec4b880eff1846be4fb087c49f2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 5
+--- !u!65 &7840297720026203477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976645648844553487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.73, y: 31.64, z: 42.85}
+  m_Center: {x: 0, y: 15.8, z: -2.92}
+--- !u!54 &6438570568069327618
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976645648844553487}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-7052522695414119104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976645648844553487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89a4c86ee3d0c946aec4c6eb0eb1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6976645648844553631
 GameObject:
   m_ObjectHideFlags: 0
