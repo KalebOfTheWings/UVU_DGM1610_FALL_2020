@@ -623,7 +623,6 @@ MonoBehaviour:
   - {fileID: 4163928424525543478, guid: b470afd2a8c16bf42b2e2471d9297264, type: 3}
   - {fileID: 460709884419486361, guid: 186d69e05e6ce054c9ffe01a2f7b84c3, type: 3}
   - {fileID: 6976645648844553487, guid: 328d849332d91b64ca8485b703a6e284, type: 3}
-  - {fileID: 7281088188518828801, guid: 7c7c3e85a9caaf94dac694c3e0355003, type: 3}
   animalIndex: 1
   spawnRangeX: 20.5
   spawnPosZ: 20.5
