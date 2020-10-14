@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityMod;
 
+    private bool isGrounded = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
+            isGrounded = false;
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            
         }
+
     }
+    void OnCollisionEnter(Collision other)
+        {
+            
+            isGrounded = true;
+        }
 }
