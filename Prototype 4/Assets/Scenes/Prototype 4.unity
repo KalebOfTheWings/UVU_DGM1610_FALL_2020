@@ -152,6 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2695099882953648059, guid: e1fc8ec0d5e71534686a38f07fda1349,
     type: 3}
+  powerUpPrefab: {fileID: 3523550979503471749, guid: 4ae31be9484e9e741b0be5aa7800f47a,
+    type: 3}
+  enemyCount: 0
+  waveNumber: 1
 --- !u!4 &244761252
 Transform:
   m_ObjectHideFlags: 0
@@ -582,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9934db5da2b8334eab807000eb55cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 600
   hasPowerUp: 0
   focalPoint: {fileID: 580467891}
   powerUpIndicator: {fileID: 1742899641471652, guid: 923deea38dc6a8843b15db7638919c1e,
