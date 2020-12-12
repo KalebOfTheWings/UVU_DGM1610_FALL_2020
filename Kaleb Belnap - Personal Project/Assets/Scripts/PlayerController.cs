@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void FaceMouse() // Player faces the mouse
+    void FaceMouse() // Controls the player to face the mouse position.
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 30);
         Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    void Blaster() // Controls what the blaster shoots
+    void Blaster() // Controls the blaster shots when spacebar is pressed.
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

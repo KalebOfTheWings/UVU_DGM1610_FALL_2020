@@ -12,7 +12,7 @@ public class MoveForward : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Blaster shot move forward after instantiated with space
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
