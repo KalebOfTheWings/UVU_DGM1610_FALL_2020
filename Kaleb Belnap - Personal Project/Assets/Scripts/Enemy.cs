@@ -30,8 +30,6 @@ public class Enemy : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over!");
-            Destroy(gameObject);
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
         }
 
     }

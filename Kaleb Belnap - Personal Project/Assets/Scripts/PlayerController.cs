@@ -8,13 +8,15 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public GameObject shooter;
     public bool gameOver;
+
+    private GameManager gameManager;
     
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update() // Calls all actions below
@@ -42,19 +44,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Game Over!");
             gameOver = true;           
         }
-    }
+    }*/
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Game Over");
         gameOver = true;
+
+        gameManager.GameOver();
     }
 
 }
