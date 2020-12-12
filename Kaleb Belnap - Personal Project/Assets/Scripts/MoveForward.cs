@@ -11,9 +11,8 @@ public class MoveForward : MonoBehaviour
     {
         
     }
-
-    // Blaster shot move forward after instantiated with space
-    void Update()
+    
+    void Update() // Blaster shot move forward after instantiated with space
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }

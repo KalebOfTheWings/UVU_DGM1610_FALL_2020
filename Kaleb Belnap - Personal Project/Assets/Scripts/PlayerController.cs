@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject player;
     public GameObject shooter;
+    public bool gameOver;
     
     
 
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Update() 
+    void Update() // Calls all actions below
     {
         FaceMouse();
         Blaster();
@@ -40,4 +41,20 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, shooter.transform.position, shooter.transform.rotation);
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Game Over!");
+            gameOver = true;           
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Game Over");
+        gameOver = true;
+    }
+
 }

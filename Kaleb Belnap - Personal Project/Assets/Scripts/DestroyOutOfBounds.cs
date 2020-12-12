@@ -1,32 +1,31 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    private float topBound = 60;
+    private float sidebound = 40;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if (transform.position.x > 40)
+        // Destroys blaster clones when they are out of bounds, out of player view. 
+        if (transform.position.x > sidebound)
         {
             Destroy(gameObject);
-        }
-        
-        if (transform.position.x < -40)
+        }else if (transform.position.x < -sidebound)
         {
             Destroy(gameObject);
-        }
-        if (transform.position.y > 60)
+        }else if (transform.position.y > topBound)
         {
             Destroy(gameObject);
-        }
-        if (transform.position.y < -60)
+        }else if (transform.position.y < -topBound)
         {
             Destroy(gameObject);
         }
