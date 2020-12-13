@@ -7,30 +7,31 @@ public class DetectCollisions : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
     private GameManager gameManager;
-
     public int pointValue;
+    private SoundManager soundManager;
 
-    // Start is called before the first frame update
+
     void Start()
     {
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    void OnTriggerEnter(Collider other) // Destroys enemy and blaster upon impact.
+    void OnTriggerEnter(Collider other) 
     {
-        Destroy(gameObject);
+        SoundManager.playSound(); // plays crash sound
+
+        Destroy(gameObject); // destroys blaster and enemy
         Destroy(GameObject.FindGameObjectWithTag("Blaster"));
 
         // Explosion Particle
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
 
-        gameManager.UpdateScore(pointValue);
+
+        gameManager.UpdateScore(pointValue); // Updates score when destoyed
+
+        
     }
 
 }

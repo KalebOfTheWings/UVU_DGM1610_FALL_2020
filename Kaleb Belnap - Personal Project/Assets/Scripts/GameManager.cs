@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public Button restartButton;
     public GameObject titleScreen;
-
     public GameObject[] alienPrefabs;
     private float spawnRangeX = 60;
     private float spawnPosY = 35;
@@ -21,17 +20,7 @@ public class GameManager : MonoBehaviour
     private float startDelay = 2;
     private float spawnInterval = 1f;
     private PlayerController playerControllerScript;
-    
-    //private SpawnManager spawnManager;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
-    }
-
+  
     void Update() // If game is ended then stop enemy spawn. 
     {
         if (isGameActive == false)
@@ -68,14 +57,13 @@ public class GameManager : MonoBehaviour
         {
             int alienIndex = Random.Range(0, alienPrefabs.Length);
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, spawnPosZ);
-
             Instantiate(alienPrefabs[alienIndex], spawnPos, alienPrefabs[alienIndex].transform.rotation);
         } 
     }
 
     public void StartGame(int difficulty)
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        //playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
 
         score = 0; // score starts at zero.
         UpdateScore(0); 

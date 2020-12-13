@@ -15,24 +15,19 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        //Target the Player
-        
+        target = GameObject.FindGameObjectWithTag("Player").transform; //Target the Player
     }
 
     public void Update() // Calls all the actions below
     {
-        FacePlayer();
-        MoveForward();
+        FacePlayer(); // Enemy faces player
+        MoveForward(); // Enemy moves toward player at different rates
         
-        
-
-        if (transform.position.y < lowerBound)
+        if (transform.position.y < lowerBound) // Enemies get destroyed at y position of player
         {
             gameOver = true;
             Debug.Log("Game Over!");
         }
-
     }
 
     void FacePlayer() // When enemy spawns it will face the player.
@@ -48,8 +43,6 @@ public class Enemy : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
-        
     }
-
 }
 

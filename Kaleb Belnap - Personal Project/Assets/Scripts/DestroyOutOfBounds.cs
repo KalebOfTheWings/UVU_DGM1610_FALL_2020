@@ -6,13 +6,7 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 40;
     private float sidebound = 40;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    
     void Update()
     {
         // Destroys blaster clones when they are out of bounds, out of player view. 
@@ -29,7 +23,5 @@ public class DestroyOutOfBounds : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
-        
 }

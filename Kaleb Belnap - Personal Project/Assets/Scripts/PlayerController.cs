@@ -10,10 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool gameOver;
 
     private GameManager gameManager;
-    
-    
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -23,9 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         FaceMouse();
         Blaster();
-       
     }
-
 
     void FaceMouse() // Controls the player to face the mouse position.
     {
@@ -42,22 +37,14 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SoundManager.playSound2();
                 Instantiate(projectilePrefab, shooter.transform.position, shooter.transform.rotation);
             }
         }
-        
     }
 
-    /*public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Game Over!");
-            gameOver = true;           
-        }
-    }*/
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // If player is hit then the game is ended
     {
         Debug.Log("Game Over");
         gameOver = true;
