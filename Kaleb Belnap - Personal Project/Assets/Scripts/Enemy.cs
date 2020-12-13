@@ -5,15 +5,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
-    public float speed = 5;
+    public float speed = 10;
     public GameObject player;
     public float lowerBound = 6;
     public bool gameOver;
+    private GameManager gameManager;
     
    
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //Target the Player
         
@@ -22,7 +23,7 @@ public class Enemy : MonoBehaviour
     public void Update() // Calls all the actions below
     {
         FacePlayer();
-            MoveForward();
+        MoveForward();
         
         
 
@@ -43,7 +44,11 @@ public class Enemy : MonoBehaviour
 
     void MoveForward() // Controls the speed of the enemy.
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        if(gameManager.isGameActive)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+        
     }
 
 }

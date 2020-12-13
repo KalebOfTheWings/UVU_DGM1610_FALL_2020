@@ -38,10 +38,14 @@ public class PlayerController : MonoBehaviour
 
     void Blaster() // Controls the blaster shots when spacebar is pressed.
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (gameManager.isGameActive)
         {
-            Instantiate(projectilePrefab, shooter.transform.position, shooter.transform.rotation);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Instantiate(projectilePrefab, shooter.transform.position, shooter.transform.rotation);
+            }
         }
+        
     }
 
     /*public void OnCollisionEnter(Collision collision)
